@@ -1,0 +1,4 @@
+$("#books_container").html("<%= escape_javascript(render('establishment')) %>");
+
+
+$("#paginator").html("#{escape_javascript(paginate(@products, :remote => true)) }");

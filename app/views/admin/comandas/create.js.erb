@@ -1,0 +1,5 @@
+$("#books_container").html("<%= escape_javascript(render(:partial => '/admin/products/products')) %>");
+
+$("#add").html("<%=j flash[:add] %>");
+
+$("#paginator").html("#{escape_javascript(paginate(@products, :remote => true)) }");

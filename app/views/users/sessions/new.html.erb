@@ -1,0 +1,223 @@
+<!-- MODAL LOGIN-->
+
+     <div class="modal fade login" id="loginModal">
+          <div class="modal-dialog login animated">
+              <div class="modal-content">
+                 <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Entrar</h4>
+                    </div>
+                    <div class="modal-body">  
+                        <div class="box">
+                             <div class="content">
+                                <div class="social">
+                                    <a class="circle github" href="/auth/github">
+                                        <i class="fa fa-github fa-fw"></i>
+                                    </a>
+                                    <a id="google_login" class="circle google" href="/auth/google_oauth2">
+                                        <i class="fa fa-google-plus fa-fw"></i>
+                                    </a>
+                                    <a id="facebook_login" class="circle facebook" href="/auth/facebook">
+                                        <i class="fa fa-facebook fa-fw"></i>
+                                    </a>
+                                </div>
+                                <div class="division">
+                                    <div class="line l"></div>
+                                      <span>or</span>
+                                    <div class="line r"></div>
+                                </div>
+                                <div class="error"></div>
+                                
+                                <%= simple_form_for(resource,:html => { :class => 'form-vertical' }, as: resource_name, url: session_path(resource_name)) do |f| %>
+									    <div class="row form-group">
+                      					  <div class="col-md-12">
+									    	<%= f.label :email %>
+									    	<%= f.input_field :email, required: false, autofocus: true,  class: "form-control"%>
+									    	</div>
+									    </div>	
+									    <div class="row form-group">
+                      					  	<div class="col-md-12">
+									    		<%= f.label :password, label: "Senha"%>
+									    		<%= f.input_field :password, required: false, class: "form-control" %>
+									    	</div>
+									    </div>
+									  
+                      
+                     					<div class="row form-group">
+                        					<div class="col-md-12">
+									    		<%= f.button :submit, "Log in" , class: "btn-primary" %>
+											</div>
+										</div>
+								<% end %>
+                             </div>
+                        </div>
+                    </div>
+                    <!--<div class="modal-footer">
+                        <div class="forgot login-footer">
+                            <span>Looking to 
+                                 <a href="javascript: showRegisterForm();">create an account</a>
+                            ?</span>
+                        </div>
+                        <div class="forgot register-footer" style="display:none">
+                             <span>Already have an account?</span>
+                             <a href="javascript: showLoginForm();">Login</a>
+                        </div>
+                    </div>-->        
+              </div>
+          </div>
+      </div>
+<!--END-->
+<header id="gtco-header" class="gtco-cover gtco-cover-md header-home" role="banner" style="background-image: url(<%= asset_path 'background_header.jpg' %>) " data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="gtco-container">
+    <div class="row">
+      <div class="col-md-12 col-md-offset-0 text-left">
+
+        <div class="row row-mt-15em">
+          <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+            <span class="intro-text-small">Bem Vindo!!!</span>
+            <h1 class="cursive-font">O lugar onde você quer estar, em suas mãos!</h1>
+          </div>
+          <div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
+            <div class="form-wrap">
+              <div class="tab">
+
+                <div class="tab-content">
+                  <div class="tab-content-inner active" data-content="signup">
+                    <h3 class="cursive-font">Faça seu cadastro ou de seu estabelecimento</h3>
+
+                    <%= simple_form_for @user, :html => { :class => 'form-vertical' } do |f| %>
+                      <div class="row form-group">
+                        <div class="col-md-12">
+                          <%= f.label :name, label: "Nome" %>
+                          <%= f.input_field :name, class: "form-control" %>
+                        </div>
+                      </div>
+                      
+                      <div class="row form-group">
+                        <div class="col-md-12">
+                          <%= f.label :email %>
+                          <%= f.input_field :email, label: "Email", class: "form-control" %>
+                        </div>
+                      </div>
+                      
+                      <div class="row form-group">
+                        <div class="col-md-12">
+                          <%= f.label :password, label: "Senha" %>
+                          <%= f.input_field :password, label: "Senha", class: "form-control" %>  
+                        </div>
+                      </div>
+                      
+                      <div class="row form-group">
+                        <div class="col-md-12">
+                          <%= f.label :password_confirmation, label: "Confimar Senha" %>
+                          <%= f.input_field :password_confirmation, label: "Confimar Senha", class: "form-control" %>
+                        </div>
+                      </div>
+                      
+                      <div class="row form-group">
+                        <div class="col-md-12">
+                          <%= f.button :submit, :class => 'btn-primary' %>
+                        </div>
+                      </div>  
+                  
+                    <% end %>
+
+                      
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="gtco-features">
+  <div class="gtco-container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
+        <h2 class="cursive-font">Nossos Serviços</h2>
+        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-6">
+        <div class="feature-center animate-box" data-animate-effect="fadeIn">
+          <span class="icon">
+            <i class="ti-face-smile"></i>
+          </span>
+          <h3>Fazemos Pessoas Felizes</h3>
+          <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="feature-center animate-box" data-animate-effect="fadeIn">
+          <span class="icon">
+            <i class="ti-thought"></i>
+          </span>
+          <h3>Cardapio em Tempo Real</h3>
+          <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="feature-center animate-box" data-animate-effect="fadeIn">
+          <span class="icon">
+            <i class="ti-truck"></i>
+          </span>
+          <h3>Delivery</h3>
+          <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<div id="gtco-counter" class="gtco-section">
+  <div class="gtco-container">
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
+        <h2 class="cursive-font primary-color">Curiosidades</h2>
+        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+        <div class="feature-center">
+          <span class="counter js-counter" data-from="0" data-to="5" data-speed="5000" data-refresh-interval="50">1</span>
+          <span class="counter-label">Classificação popular</span>
+
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+        <div class="feature-center">
+          <span class="counter js-counter" data-from="0" data-to="139" data-speed="5000" data-refresh-interval="50">1</span>
+          <span class="counter-label">Tipos de Comidas</span>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+        <div class="feature-center">
+          <span class="counter js-counter" data-from="0" data-to="32" data-speed="5000" data-refresh-interval="50">1</span>
+          <span class="counter-label">Estabelecimentos</span>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+        <div class="feature-center">
+          <span class="counter js-counter" data-from="0" data-to="2016" data-speed="5000" data-refresh-interval="50">1</span>
+          <span class="counter-label">Quando Começamos</span>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

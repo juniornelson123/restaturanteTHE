@@ -1,0 +1,32 @@
+ 
+      <div class="row">
+        <div class="col-md-1 col-md-offset-11 text-center gtco-heading">
+          <div class="row">
+             <%= paginate @establishments ,remote: true%>
+          </div>
+        </div>
+      </div>
+<% @establishments.each do |establishment| %>
+
+
+        <div class="col-lg-4 col-md-4 col-sm-6">
+          <a href='/admin/establishments/<%= establishment.id %>/menus' class="fh5co-card-item">
+            <figure>
+              <div class="overlay"><i class="ti-plus"></i></div>
+              <%= image_tag establishment.image_url, class: 'center-block img-responsive' if establishment.image? %>
+            </figure>
+            <div class="fh5co-text">
+              <h2><%= establishment.name %></h2>
+              <p><%= establishment.address %></p>
+            </div>
+          </a>
+        </div>
+
+    <% end %>
+  <div class="row">
+        <div class="col-md-1 col-md-offset-11 text-center gtco-heading">
+          <div class="row">
+            <%= paginate @establishments, remote: true%>
+          </div>
+        </div>
+            

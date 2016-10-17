@@ -1,0 +1,55 @@
+<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-image: url(images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="gtco-container">
+      <div class="row">
+        <div class="col-md-12 col-md-offset-0 text-center">
+          
+
+          <div class="row row-mt-15em">
+            <div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
+              <h1 class="cursive-font">Comanda!</h1>  
+            </div>
+            
+          </div>
+              
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+  <div class="gtco-section">
+    <div class="gtco-container">
+      <div class="row">
+        <%- model_class = Comanda -%>
+        <div class="page-header">
+          <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+        </div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th><%= model_class.human_attribute_name(:product_id) %></th>
+              <th><%= model_class.human_attribute_name(:price) %></th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <% @comanda.each do |comanda| %>
+              <tr>
+                <td><%= comanda.product.name %></td>
+                <td><%= comanda.product.price %></td>
+                
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <%= link_to t('.new', :default => t("helpers.links.new")),
+                    new_admin_establishment_comanda_path,
+                    :class => 'btn btn-primary' %>
+        <%=bootstrap_flash %>
+      </div>
+    </div>
+  </div>
